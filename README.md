@@ -5,21 +5,28 @@
 ❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
-❗️**Author(s)**: Your name(s) here
+Author(s): Amna Ali
 
-❗️**Google Doc Link**: Your link here
+Google Doc Link: https://docs.google.com/document/d/1exCCpoyNlmkfvNWsoOh0qh2_4I6DcWhGPj0PTBDN7mw/edit?usp=sharing
 
 ---
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+**Title**: Feeding Frenzy
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: This project is a small game where a shark moves left and right at the bottom of the screen to eat 
+             good falling items like fish or shells and avoid bad items like trash or oil. The player earns points for 
+             eating good things and loses lives for eating bad things.
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+**Source Assignment(s)**:   HW04: A Bug's Life
+                            HW05: Funky Functions
+                            HW08: It's in your Genes
+                            T11:  The legend of Tuna: Breath of Catnip
+                            T10: Intro to Classes
 
-❗️**CRC Card(s)**:
+
+**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
   - See this link for a sample CRC card and a template to use for your own cards (you will have to make a copy to edit):
     [CRC Card Example](https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing)
@@ -29,23 +36,39 @@
   
 ![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
 
-❗️**Branches**: This project will **require** effective use of git. 
-
-❗Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
-branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
-into your own, following the process we've discussed in previous assignments, then re-branching out from the merged code.  
+**Branches**: This project will **require** effective use of git. 
+ 
 
 ```
-    Branch 1 starting name: _____________
-    Branch 2 starting name: _____________
+    Branch 1 starting name: alia2
 ```
 
 ### References 
 
-❗Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
+Throughout this project, you will likely use outside resources. Reference all ideas which are not your own, 
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update this 
 section as you go. DO NOT forget about it!
+
+Pygame Documentation: https://www.pygame.org/docs/
+- Used to learn sprite setup, event handling, font rendering and collision detection.
+
+itch.io Free Game Assets (Pixel Art section) : https://itch.io/game-assets/tag-pixel-art
+- Source of pixel art sprites, backgrounds and animation sets. 
+- Used to find pixel sharks, fish and undersea items under open licenses.
+
+Sprite Database (Pixel-Style Sprites): https://spritedatabase.net/
+- Reference for retro sprite designs and pixel character inspiration
+
+CSC 226 Assignment T11
+- Served as a model for inheritance and object oriented coding.
+
+ChatGPT (GPT-5)
+- Helped with inheritance logic and other cofusions.
+
+Class Lecture Notes
+- Used for concepts of eventdriven programming and class inheritance.
+
 
 ---
 
