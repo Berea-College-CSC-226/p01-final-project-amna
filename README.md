@@ -36,6 +36,10 @@ Google Doc Link: https://docs.google.com/document/d/1exCCpoyNlmkfvNWsoOh0qh2_4I6
   
 ![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
 
+![Game CRC](images/crc_game.png)
+![Player CRC](images/crc_player.png)
+
+
 **Branches**: This project will **require** effective use of git. 
  
 
