@@ -28,15 +28,15 @@ Google Doc Link: https://docs.google.com/document/d/1exCCpoyNlmkfvNWsoOh0qh2_4I6
 
 **CRC Card(s)**:
 
-![Game CRC](image/crc_game.png)
+![Game CRC](CRC Images/crc_game.png)
 
-![Bad Items CRC](image/crc_baditem.png)
+![Bad Items CRC](CRC Images/crc_baditem.png)
 
-![Good Items CRC](image/crc_gooditem.png)
+![Good Items CRC](CRC Images/crc_gooditem.png)
 
-![Items CRC](image/crc_items.png)
+![Items CRC](CRC Images/crc_items.png)
 
-![Shark CRC](image/crc_shark.png)
+![Shark CRC](CRC Images/crc_shark.png)
 
 
 **Branches**: This project will **require** effective use of git. 
@@ -59,6 +59,21 @@ Pygame Documentation: https://www.pygame.org/docs/
 itch.io Free Game Assets (Pixel Art section) : https://itch.io/game-assets/tag-pixel-art
 - Source of pixel art sprites, backgrounds and animation sets. 
 - Used to find pixel sharks, fish and undersea items under open licenses.
+
+Graphics for lives: https://nicolemariet.itch.io/pixel-heart-animation-32x32-16x16-freebie
+- using the gif for hearts
+
+Sprite for Rusty Can: https://pixelgnome.itch.io/fish
+- Sprite for my bad item
+
+Sprite for Fish: https://snowdingo.itch.io/pixel-fishes
+- Sprite for my goof item
+
+Sprite for water: https://ninjikin.itch.io/water/comments
+- Used a sprite to make a loop of a GIF
+
+Sprite for start button: https://www.pngwing.com/en/free-png-yearn
+- Using for an interactive start button
 
 Sprite Database (Pixel-Style Sprites): https://spritedatabase.net/
 - Reference for retro sprite designs and pixel character inspiration
