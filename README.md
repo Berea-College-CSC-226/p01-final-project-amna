@@ -78,6 +78,9 @@ Sprite for start button: https://www.pngwing.com/en/free-png-yearn
 Sprite Database (Pixel-Style Sprites): https://spritedatabase.net/
 - Reference for retro sprite designs and pixel character inspiration
 
+Font: https://www.1001fonts.com/pixel-fonts.html
+- Pixel font used in game
+
 CSC 226 Assignment T11
 - Served as a model for inheritance and object oriented coding.
 
