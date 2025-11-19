@@ -13,8 +13,8 @@ class Game:
         pygame.init()
 
         # WINDOW SIZE
-        self.width = 1000
-        self.height = 700
+        self.width = 1100
+        self.height = 800
 
         # WINDOW CREATION
         self.screen = pygame.display.set_mode((self.width, self.height))
@@ -70,11 +70,11 @@ class Game:
             self.screen.blit(self.background, (0, 0))
 
             # draw logo
-            logo_rect = self.logo.get_rect(center=(self.width // 2, 220))
+            logo_rect = self.logo.get_rect(center=(self.width // 2, 270))
             self.screen.blit(self.logo, logo_rect)
 
             # draw text
-            text_rect = text.get_rect(center=(self.width // 2, 430))
+            text_rect = text.get_rect(center=(self.width // 2, 470))
             self.screen.blit(text, text_rect)
 
             pygame.display.flip()
