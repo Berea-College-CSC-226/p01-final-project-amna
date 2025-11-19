@@ -95,13 +95,17 @@ Class Lecture Notes
 
 ## Milestone 2: Code Setup and Issue Queue
 
-❗Most importantly, keep your issue queue up to date, and focus on your code. 🙃
+Most importantly, keep your issue queue up to date, and focus on your code. 🙃
 
-❗Reflect on what you’ve done so far. How’s it going? Are you feeling behind/ahead? What are you worried about? 
+Reflect on what you’ve done so far. How’s it going? Are you feeling behind/ahead? What are you worried about? 
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    I feel like I am at a good spot. my coding started off really well and I have all the essentials down. I have
+    made the classes and I have started with piecing everything together. I think it is a good start. I feel confident
+    in the direction I have taken. I am however scared to start coding all the interactions and dealing with all 
+    the "what ifs" because it can go wrong and there is so much to think about. I hope that I am able to break it all 
+    down and slwoly deal with each and every possibility
 ```
 
 ---
