@@ -8,7 +8,7 @@ class FallingItem:
         """
         self.image = pygame.image.load(image_path).convert_alpha()
         # CHANGE WIDTH AND HEIGHT LATER
-        self.image = pygame.transform.scale(self.image, (80, 80))
+        self.image = pygame.transform.scale(self.image, (128, 72))
 
         self.screen_width = screen_width
         self.screen_height = screen_height
@@ -27,8 +27,8 @@ class FallingItem:
         """
         respawning items randomly from the top of the screen
         """
-        self.x = random.randint(40, self.screen_width - 40)
-        self.y = -50
+        self.x = random.randint(10, self.screen_width - 10)
+        self.y = random.randint(-300,-50)
 
         self.rect.center = (self.x, self.y)
 

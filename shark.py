@@ -7,7 +7,7 @@ class Shark:
         """
         self.image = pygame.image.load('images/shark.png').convert_alpha()
         # if i need to change the size later
-        self.image = pygame.transform.scale(self.image, (180, 300))
+        self.image = pygame.transform.scale(self.image, (512, 539))
 
         self.screen_width = screen_width
         self.screen_height = screen_height
@@ -18,25 +18,31 @@ class Shark:
 
         # movement
         self.speed = 4
-        self.direction = 1
 
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
     def update(self):
         """
-        moving it left and right
+        moving the shark with arrow keys
         """
-        self.x += self.speed * self.direction
-        left_limit = 90
-        right_limit = self.screen_width - 90
+        keys = pygame.key.get_pressed()
 
-        if self.x < left_limit:
-            self.x = left_limit  # stop at wall
+        # move left
+        if keys[pygame.K_LEFT]:
+            self.x -= self.speed
+        # move right
+        if keys[pygame.K_RIGHT]:
+            self.x += self.speed
 
-        if self.x > right_limit:
-            self.x = right_limit  #
+        # keep inside boundaries
+        if self.x < 90:
+            self.x = 90
+        if self.x > self.screen_width - 90:
+            self.x = self.screen_width - 90
 
+        # update rectangle
         self.rect.center = (self.x, self.y)
+
 
     def draw(self, screen):
         """Draw the shark onto the screen."""
