@@ -32,6 +32,10 @@ class Game:
         self.game_started = False
         # SHARK
         self.shark = Shark(self.width, self.height)
+        # LIVES
+        self.lives = 3
+        self.life_pic = pygame.image.load("images/heart.png").convert_alpha()
+        self.life_pic = transform.scale(self.life_pic, (80, 80))
         # BAD ITEM
         # BUCKET (putting it here because it is the only one with a different size)
         self.bucket_image = pygame.image.load("images/bad_item.png").convert_alpha()
@@ -49,11 +53,10 @@ class Game:
             "images/good_6.png"
         ]
 
-        # for i in range(1):
-        #     bucket = FallingItem(self.width, self.height, "images/bad_item.png", speed=6)
-        #     bucket.image = self.bucket_image
-        #     bucket.rect = bucket.image.get_rect(center=(bucket.x, bucket.y))
-        #     self.items.append(bucket)
+        self.score = 0
+
+        # LIVES
+        self.lives = 3
 
     def start_page(self):
         """
@@ -103,12 +106,12 @@ class Game:
                 self.spawn_timer = 0
 
                 # more fish than buckets
-                if random.random() < 0.60:
+                if random.random() < 0.80:
                     img = random.choice(self.fish_images)
-                    speed = 3.75
+                    speed = 3.9
                     new_item = FallingItem(self.width, self.height, img, speed)
                 else:
-                    speed = 3.75
+                    speed = 4
                     new_item = FallingItem(self.width, self.height, "images/bad_item.png", speed)
                     new_item.image = self.bucket_image
                     new_item.rect = new_item.image.get_rect(center=(new_item.x, new_item.y))
@@ -124,17 +127,30 @@ class Game:
                 item.update()
 
                 #  shark mouth hitbox
-                mouth_width = 190
+                mouth_width = 122
                 mouth_height = 190
 
+                offset_x = 35
+
                 mouth_rect = pygame.Rect(
-                    self.shark.rect.centerx - mouth_width // 2,
+                    self.shark.rect.centerx + offset_x- mouth_width // 2,
                     self.shark.rect.bottom - mouth_height,
                     mouth_width,
                     mouth_height
                 )
+
                 if item.rect.colliderect(mouth_rect):
+                    if item.image != self.bucket_image:
+                        self.score += 20
+                    else:
+                        self.lives -= 1
+
                     self.items.remove(item)
+
+                    if self.lives == 0:
+                        self.running = False
+
+                    continue
 
             # DRAWING EVERYTHING
             self.screen.blit(self.background, (0, 0))
@@ -143,6 +159,13 @@ class Game:
 
             for item in self.items:
                 item.draw(self.screen)
+
+            score_text = self.font.render(str(self.score), True, (255, 255, 255))
+            text_rect = score_text.get_rect(topright=(self.width - 20, 20))
+            self.screen.blit(score_text, text_rect)
+
+            for i in range(self.lives):
+                self.screen.blit(self.life_pic, (20 + (i * 45), 20))
 
             pygame.display.flip()
             self.clock.tick(60)

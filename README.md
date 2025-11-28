@@ -75,6 +75,8 @@ Sprite for water: https://ninjikin.itch.io/water/comments
 Sprite for start button: https://www.pngwing.com/en/free-png-yearn
 - Using for an interactive start button
 
+Sprite for Life: https://miguel-pm-romeu.itch.io/heart
+
 Sprite Database (Pixel-Style Sprites): https://spritedatabase.net/
 - Reference for retro sprite designs and pixel character inspiration
 

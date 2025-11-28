@@ -17,7 +17,7 @@ class Shark:
         self.y = self.screen_height - 150
 
         # movement
-        self.speed = 4
+        self.speed = 5
 
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
