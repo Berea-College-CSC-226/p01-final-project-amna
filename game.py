@@ -35,7 +35,7 @@ class Game:
         # LIVES
         self.lives = 3
         self.life_pic = pygame.image.load("images/heart.png").convert_alpha()
-        self.life_pic = transform.scale(self.life_pic, (80, 80))
+        self.life_pic = transform.scale(self.life_pic, (90, 90))
         # BAD ITEM
         # BUCKET (putting it here because it is the only one with a different size)
         self.bucket_image = pygame.image.load("images/bad_item.png").convert_alpha()
@@ -89,6 +89,34 @@ class Game:
             pygame.display.flip()
             self.clock.tick(60)
 
+    def game_over(self):
+        """
+        just the game over screen and the final score
+        """
+        game_over_text = self.font.render("Game Over!", True, (255,255,255))
+        score_text = self.font.render(f"Score: {self.score}", True, (255,255,255))
+        click_text = self.font.render("Click to play again", True, (255, 255, 255))
+
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    return # to restart
+
+                # DRAW background
+                self.screen.blit(self.background, (0, 0))
+
+            # DRAW text
+            self.screen.blit(game_over_text, game_over_text.get_rect(center=(self.width // 2, 250)))
+            self.screen.blit(score_text, score_text.get_rect(center=(self.width // 2, 350)))
+            self.screen.blit(click_text, click_text.get_rect(center=(self.width // 2, 450)))
+
+            pygame.display.flip()
+            self.clock.tick(60)
+
     def game_loop(self):
         """
         Main loop in which the game will update shark and falling items
@@ -106,7 +134,7 @@ class Game:
                 self.spawn_timer = 0
 
                 # more fish than buckets
-                if random.random() < 0.80:
+                if random.random() < 0.6:
                     img = random.choice(self.fish_images)
                     speed = 3.9
                     new_item = FallingItem(self.width, self.height, img, speed)
@@ -117,7 +145,7 @@ class Game:
                     new_item.rect = new_item.image.get_rect(center=(new_item.x, new_item.y))
 
                 # LIMITING HOW MANY THINGS ARE ON THE SCREENS
-                if len(self.items) < 4:
+                if len(self.items) < 1:
                     self.items.append(new_item)
 
             # UPDATE OBJECTS
@@ -148,7 +176,8 @@ class Game:
                     self.items.remove(item)
 
                     if self.lives == 0:
-                        self.running = False
+                        self.game_over()
+                        return
 
                     continue
 
@@ -172,6 +201,7 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game()
-    game.start_page()
-    game.game_loop()
+   while True:
+       game = Game()
+       game.start_page()
+       game.game_loop()

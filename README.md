@@ -114,16 +114,28 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 ## Milestone 3: Virtual Check-In
 
-❗Indicate what percentage of the project you have left to complete and how confident you feel. 
+**Indicate what percentage of the project you have left to complete and how confident you feel.**
 
-❗️**Completion Percentage**: `0 - 100%`
+    I think I am done with about 85% of it. It leaves me 20% to still complete. I still have to run more 
+    tests but for now, I feel good. My game is running well and I feel confident that I can get it done 
+    I am a little worries about having a complete and comprehensive test suite. 
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Completion Percentage**: `85%`
+
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this with your reflection
+    I feel confident enough. I am a little scared about wrapping it all up. have all these pieces and I need to 
+    tie them up together seemlessly. I was feeling a little rushed but I think I am right on track now to 
+    complete the project. I put in a lot of effort as soon as the project was assigned as I was doing it alone 
+    and was afraid of not being able to complete it. Now, that I put in the effort, I do feel like I will be able to 
+    put forth a decent product. One think I can do to ensure I can deliver my product is not procrastinate. I have
+    been using an external monitor to make sure that I can view my issue cue at all times and that has been really 
+    helpful in visulising all the tasks I am yet to complete and honestly just knowinf where to start from. I plan on
+    going to the TA lab to show give them a demo of my demo and get feedback so I can make last minute and hopefully 
+    minor adjustment. 
 ```
 
 ---
