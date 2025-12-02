@@ -16,33 +16,43 @@ class Game:
         # WINDOW SIZE
         self.width = 1000
         self.height = 750
+
         # WINDOW CREATION
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption('Feeding Frenzy')
         self.clock = pygame.time.Clock()
+
         # LOGO
         self.logo = pygame.image.load("images/title.png").convert_alpha()
         self.logo = transform.scale(self.logo, (700, 700))
+
         # BACKGROUND
         self.background = pygame.image.load("images/water_still.png").convert_alpha()
+
         # FONT
         self.font = pygame.font.Font("fonts/pixel.ttf", 40)
+
         # STATE OF GAME
         self.running = True
         self.game_started = False
+
         # SHARK
         self.shark = Shark(self.width, self.height)
+
         # LIVES
         self.lives = 3
         self.life_pic = pygame.image.load("images/heart.png").convert_alpha()
         self.life_pic = transform.scale(self.life_pic, (90, 90))
+
         # BAD ITEM
         # BUCKET (putting it here because it is the only one with a different size)
         self.bucket_image = pygame.image.load("images/bad_item.png").convert_alpha()
         self.bucket_image = pygame.transform.scale(self.bucket_image, (100,100))
+
         # SPAWN TIMER
         self.spawn_timer = 0
         self.spawn_difference = 40
+
         # LIST WITH FALLING ITEMS
         self.items = []
         self.fish_images = [
@@ -57,6 +67,17 @@ class Game:
 
         # LIVES
         self.lives = 3
+
+        #  START SPEED
+        self.start_speed = 4
+
+        # LANES FOR FALLING
+        self.lanes = [
+            self.width * 0.15,
+            self.width * 0.35,
+            self.width * 0.55,
+            self.width * 0.75
+        ]
 
     def start_page(self):
         """
@@ -88,6 +109,7 @@ class Game:
 
             pygame.display.flip()
             self.clock.tick(60)
+
 
     def game_over(self):
         """
@@ -127,25 +149,47 @@ class Game:
                     pygame.quit()
                     quit()
 
+            # INCREASING SPEED EVERY 200 POINTS
+            self.start_speed = 4 + (self.score//200) - 0.5
+
             # SPAWNING
             self.spawn_timer += 1
 
             if self.spawn_timer >= self.spawn_difference:
                 self.spawn_timer = 0
 
-                # more fish than buckets
-                if random.random() < 0.6:
+                lane_x = random.choice(self.lanes)
+
+                # TRYING TO AVOID STACKING
+                lane_blocked = False
+                for item in self.items:
+                    # if this item is in the same lane (x position matches)
+                    if abs(item.rect.centerx - lane_x) < 10:
+                        # and it is too close to top → block lane
+                        if item.y < 450:
+                            lane_blocked = True
+                            break
+
+                if lane_blocked:
+                    continue
+
+                if random.random() < 0.90:
                     img = random.choice(self.fish_images)
-                    speed = 3.9
+                    speed = self.start_speed
                     new_item = FallingItem(self.width, self.height, img, speed)
+                    new_item.kind = "fish"
                 else:
-                    speed = 4
+                    speed = self.start_speed
                     new_item = FallingItem(self.width, self.height, "images/bad_item.png", speed)
                     new_item.image = self.bucket_image
                     new_item.rect = new_item.image.get_rect(center=(new_item.x, new_item.y))
+                    new_item.kind = "bucket"
 
-                # LIMITING HOW MANY THINGS ARE ON THE SCREENS
-                if len(self.items) < 1:
+                # APPLY lane X position
+                new_item.x = lane_x
+                new_item.rect.centerx = lane_x
+
+                if len(self.items) < len(self.lanes):  # max = 4 items always
                     self.items.append(new_item)
 
             # UPDATE OBJECTS
@@ -153,6 +197,11 @@ class Game:
 
             for item in self.items[:]:
                 item.update()
+
+                # REMOVE ITEM IF IT FALLS BELOW SCREEN
+                if item.rect.top > self.height:
+                    self.items.remove(item)
+                    continue
 
                 #  shark mouth hitbox
                 mouth_width = 122
@@ -168,9 +217,9 @@ class Game:
                 )
 
                 if item.rect.colliderect(mouth_rect):
-                    if item.image != self.bucket_image:
+                    if item.kind == "fish":
                         self.score += 20
-                    else:
+                    elif item.kind == "bucket":
                         self.lives -= 1
 
                     self.items.remove(item)

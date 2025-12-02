@@ -107,7 +107,7 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
     made the classes and I have started with piecing everything together. I think it is a good start. I feel confident
     in the direction I have taken. I am however scared to start coding all the interactions and dealing with all 
     the "what ifs" because it can go wrong and there is so much to think about. I hope that I am able to break it all 
-    down and slwoly deal with each and every possibility
+    down and slwoly deal with each and every possibility. I am worried about spawning bugs. 
 ```
 
 ---
