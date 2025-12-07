@@ -204,6 +204,7 @@ Each partner should write three to four well-written paragraphs address the foll
     learn a lot because I had to solve every problem myself and I feel like in the class I was too comfortable because
     I knew I had a partner. Doing everything alone helped me understand my own code better and really think about how 
     different parts of the game interact. I enjoyed working by myself because I could move at my own pace and experiment
-    when I wanted to but it did make me think of my negative traits in group work settings 
+    when I wanted to but it did make me think of my negative traits in group work settings. Also would give myself more 
+    time to actually run tests, 
 ```
   
