@@ -37,9 +37,10 @@ class FallingItem:
         self.y += self.speed
 
         # reset if item goes past the bottom
-        if self.y > self.screen_height + 50:
-            self.reset_position()
-
+        #
+        # if self.y > self.screen_height + 50:
+        #    self.reset_position()
+        #
         # update the rectangle
         self.rect.center = (self.x, self.y)
 

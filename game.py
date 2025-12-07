@@ -42,7 +42,7 @@ class Game:
         # LIVES
         self.lives = 3
         self.life_pic = pygame.image.load("images/heart.png").convert_alpha()
-        self.life_pic = transform.scale(self.life_pic, (90, 90))
+        self.life_pic = transform.scale(self.life_pic, (95, 95))
 
         # BAD ITEM
         # BUCKET (putting it here because it is the only one with a different size)
@@ -64,9 +64,6 @@ class Game:
         ]
 
         self.score = 0
-
-        # LIVES
-        self.lives = 3
 
         #  START SPEED
         self.start_speed = 4
@@ -150,7 +147,7 @@ class Game:
                     quit()
 
             # INCREASING SPEED EVERY 200 POINTS
-            self.start_speed = 4 + (self.score//200) - 0.5
+            self.start_speed = 4 + (self.score//100) - 0.5
 
             # SPAWNING
             self.spawn_timer += 1
@@ -173,7 +170,7 @@ class Game:
                 if lane_blocked:
                     continue
 
-                if random.random() < 0.90:
+                if random.random() < 0.60:
                     img = random.choice(self.fish_images)
                     speed = self.start_speed
                     new_item = FallingItem(self.width, self.height, img, speed)
@@ -206,9 +203,7 @@ class Game:
                 #  shark mouth hitbox
                 mouth_width = 122
                 mouth_height = 190
-
                 offset_x = 35
-
                 mouth_rect = pygame.Rect(
                     self.shark.rect.centerx + offset_x- mouth_width // 2,
                     self.shark.rect.bottom - mouth_height,

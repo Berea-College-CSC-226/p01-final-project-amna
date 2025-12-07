@@ -142,20 +142,30 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 
-❗In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
+In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
 
-### ❗Errors and Constraints
+    A game window will open after you press Run. Use the left and right arrow keys to move the shark. Catch the falling 
+    fish and avoid the buckets so you do not lose lives. Your lives are shown in the top left and your score is in the 
+    top right. You have 3 lives and when you run out a game over screen will appear and you can click to play again.
 
-❗Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
+### Errors and Constraints
+
+Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
 deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
 
-### ❗Reflection
+    I think I logged most of my bugs in the issue cue. I did add some more after making some peers review my project 
+    and after running it multiple times. Hopefully I caught most of them. The main ones were the hitbox for the mouth
+    of the shark, items were spawning to close together, only buckets were spawning, too many items were spawning at 
+    once. There were some things in the issue cue that I planned to go like using a GIF for the lives but there was not 
+    enough time. 
 
-❗Each partner should write three to four well-written paragraphs address the following (at a minimum):
+### Reflection
+
+Each partner should write three to four well-written paragraphs address the following (at a minimum):
 - Why did you select the project that you did?
 - How closely did your final project reflect your initial design?
 - What did you learn from this process?
@@ -166,9 +176,34 @@ deficiencies that remain in your code. Bugs found that aren't acknowledged in th
 ```
     Partner 1: **Replace this with your reflection
 ```
+    I chose this project because I like sharks and fish. I wanted to make something cute and fun that would allow me 
+    to apply all major concepts required for the project. "Feeding Frenzy" helped me make use of classes, inheritance 
+    events, collisions and sprites in a creative way. I designed some of my own visuals like the shark and logo which 
+    helpd me complete the project and make it feel more polished to me. I had planned from the start to make it pixel-ey
+    and make it have a "retro" look and I had the basic idea of wanting falling fish and catching them in the mouth. 
+     
+    I think my project is close to what I had in mind but I just imagined it to have better graphics. I also expected it 
+    the game play to look more like this Lilo and Stitch Sandwhich game but it was a little different in terms of 
+    spawnig items and the game logic was a little different too. After deciding that I wanted to keep it as simple as 
+    possible I had a more clear idea of what I wanted it to look like. From them the gameplay and how the items fell 
+    how the score worked and the life system were the same. I did tweak some stuff as I went because it just fit the 
+    game better. I added the hitbox and changed the way items spawned by implenting lanes, changed speed and many conditions
+    I learnt how important iteration it in game development becasue something small like a simple spawn or the size of 
+    a collision area can change the feel and play of the game. 
 
-```
-    Partner 2: **Replace this with your reflection
-```
+    The hardest part for me was the collisions and the the spawning behaviour. Getting the hitbox detection just right 
+    was extremely difficult and I still do not have it right because sometimes if an item is too close on the left side 
+    and the items boundaries were overlapping where I did not want them to. Another issue was making sure items were 
+    actually removed from the screen instead of looping back or piling up. This was way more complicated than I expected
+    and it taught me a lot about debugging and carefully re-reading my code. I had to adjust the hitbox many times and 
+    change the spawning logic and understand how each object behaved every single frame. 
 
----
+    If I had to this project again I would organize my classes more cleanly from the start and test each feature 
+    separately before combining them. I would also want to add more details like sound effects and a better difficulty 
+    system. Since I worked alone I had to handle everything myself. It was definitely challenging but it also helped me
+    learn a lot because I had to solve every problem myself and I feel like in the class I was too comfortable because
+    I knew I had a partner. Doing everything alone helped me understand my own code better and really think about how 
+    different parts of the game interact. I enjoyed working by myself because I could move at my own pace and experiment
+    when I wanted to but it did make me think of my negative traits in group work settings 
+```
+  
